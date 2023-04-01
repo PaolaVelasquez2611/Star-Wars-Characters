@@ -1,0 +1,1 @@
+export {default as starWarsCard} from "./tarjeta/tarjeta"
