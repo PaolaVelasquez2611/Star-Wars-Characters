@@ -1,5 +1,5 @@
 
-import { getApi } from "./components/data";
+import {default as getApi} from "./components/data";
 import "./components/export";
 import starWarsCard, { Attribute } from "./components/tarjeta/tarjeta";
 

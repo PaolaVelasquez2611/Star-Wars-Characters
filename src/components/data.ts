@@ -1,4 +1,4 @@
-export async function getApi() {
+export default async function getApi() {
 
     try {
         const array = [];
