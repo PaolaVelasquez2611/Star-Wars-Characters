@@ -13,30 +13,13 @@ class AppContainer extends HTMLElement {
     }
 
 
-    async connectedCallback() {
-        const data = await getApi();
-      
-
-        data?.forEach((character: any) => {
-            const characterCard = this.ownerDocument.createElement(
-                "starwars-card") as starWarsCard;
-                characterCard.setAttribute(Attribute.name, character.name);
-                characterCard.setAttribute(Attribute.eyecolor, character.eye_color);
-                characterCard.setAttribute(Attribute.gender, character.gender);
-                this.stars.push(characterCard);
-
-        });
-
-        this.render(this.stars);
+    connectedCallback() {
+        this.render();
     }
 
-    render(stars: any) {
-        if (this.shadowRoot){
-            this.shadowRoot.innerHTML = ``;
-            this.stars.forEach((stars)=>{
-                this.shadowRoot?.appendChild(stars);
-            });
-        }
+    render() {
+        const dashboardcard = this.ownerDocument.createElement("dashboard-container");
+        this.shadowRoot?.appendChild(dashboardcard)
         
     }
 }
